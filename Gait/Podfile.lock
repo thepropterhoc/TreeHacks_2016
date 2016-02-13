@@ -1,0 +1,15 @@
+PODS:
+  - JPSVolumeButtonHandler (1.0.0)
+  - Realm (0.98.1):
+    - Realm/Headers (= 0.98.1)
+  - Realm/Headers (0.98.1)
+
+DEPENDENCIES:
+  - JPSVolumeButtonHandler
+  - Realm
+
+SPEC CHECKSUMS:
+  JPSVolumeButtonHandler: b056ec5c574fbd75a0637c527e25fe0197ec1648
+  Realm: ca4a4122e939e228e10694fc49011386cb2ecb07
+
+COCOAPODS: 0.39.0
