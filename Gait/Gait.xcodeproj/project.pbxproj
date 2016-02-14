@@ -16,6 +16,8 @@
 		BD8D535C1C6EE020003B4EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8D535A1C6EE020003B4EC2 /* LaunchScreen.storyboard */; };
 		BD8D53641C6EE13E003B4EC2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8D53631C6EE13E003B4EC2 /* CoreMotion.framework */; };
 		BDE0980E1C6FB6AB0055FD95 /* SVRecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE0980D1C6FB6AB0055FD95 /* SVRecordingViewController.m */; };
+		BDE098111C6FEE5A0055FD95 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE098101C6FEE5A0055FD95 /* AudioToolbox.framework */; };
+		BDE098171C6FF89E0055FD95 /* SVManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE098161C6FF89E0055FD95 /* SVManagementViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,9 @@
 		BDE0980C1C6FB6AB0055FD95 /* SVRecordingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVRecordingViewController.h; path = Controllers/SVRecordingViewController.h; sourceTree = "<group>"; };
 		BDE0980D1C6FB6AB0055FD95 /* SVRecordingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVRecordingViewController.m; path = Controllers/SVRecordingViewController.m; sourceTree = "<group>"; };
 		BDE0980F1C6FE9CD0055FD95 /* SVRecordingTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SVRecordingTypes.h; path = Models/SVRecordingTypes.h; sourceTree = "<group>"; };
+		BDE098101C6FEE5A0055FD95 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BDE098151C6FF89E0055FD95 /* SVManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVManagementViewController.h; path = Controllers/SVManagementViewController.h; sourceTree = "<group>"; };
+		BDE098161C6FF89E0055FD95 /* SVManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVManagementViewController.m; path = Controllers/SVManagementViewController.m; sourceTree = "<group>"; };
 		FA02357FEF502A2A1DD7F64F /* Pods-Gait.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gait.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gait/Pods-Gait.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDE098111C6FEE5A0055FD95 /* AudioToolbox.framework in Frameworks */,
 				BD8D53641C6EE13E003B4EC2 /* CoreMotion.framework in Frameworks */,
 				ACA76E2FC262158F5D6BA0EB /* libPods-Gait.a in Frameworks */,
 			);
@@ -80,6 +86,8 @@
 				BDE0980F1C6FE9CD0055FD95 /* SVRecordingTypes.h */,
 				BDE0980C1C6FB6AB0055FD95 /* SVRecordingViewController.h */,
 				BDE0980D1C6FB6AB0055FD95 /* SVRecordingViewController.m */,
+				BDE098151C6FF89E0055FD95 /* SVManagementViewController.h */,
+				BDE098161C6FF89E0055FD95 /* SVManagementViewController.m */,
 				BD8D53551C6EE020003B4EC2 /* Main.storyboard */,
 				BD8D53581C6EE020003B4EC2 /* Assets.xcassets */,
 				BD8D535A1C6EE020003B4EC2 /* LaunchScreen.storyboard */,
@@ -100,6 +108,7 @@
 		CACEABFCDB1B8E40C755F31B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BDE098101C6FEE5A0055FD95 /* AudioToolbox.framework */,
 				7EBEFC86A8EDC52F613895FE /* libPods-Gait.a */,
 			);
 			name = Frameworks;
@@ -237,6 +246,7 @@
 			files = (
 				BD8D53541C6EE020003B4EC2 /* ViewController.m in Sources */,
 				BD8D53511C6EE020003B4EC2 /* AppDelegate.m in Sources */,
+				BDE098171C6FF89E0055FD95 /* SVManagementViewController.m in Sources */,
 				BD8D534E1C6EE020003B4EC2 /* main.m in Sources */,
 				BDE0980E1C6FB6AB0055FD95 /* SVRecordingViewController.m in Sources */,
 			);

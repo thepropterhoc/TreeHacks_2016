@@ -7,6 +7,8 @@
 //
 
 #import "SVRecordingViewController.h"
+#import <AudioToolbox/AudioToolbox.h>
+
 
 @interface SVRecordingViewController ()
 
@@ -33,6 +35,9 @@
 @property (strong, nonatomic) NSNumber *selectedInterval;
 @property (strong, nonatomic) NSString *selectedClass;
 @property (strong, nonatomic) NSNumber *selectedRecordingDistance;
+
+@property (strong, nonatomic) UIView * grayOverlay;
+@property (strong, nonatomic) UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -68,7 +73,29 @@ static int MAX_RECORDING_SAMPLES = (int) ((1.0 / 0.01) * 200.0);
     
     [self beginLoggingWithInterval:selectedInterval];
     
+    
+    
+    
+    [self.view setUserInteractionEnabled:NO];
+    
+    if (!self.grayOverlay){
+      self.grayOverlay = [[UIView alloc] initWithFrame:self.view.frame];
+      [self.grayOverlay setBackgroundColor:[UIColor grayColor]];
+      [self.grayOverlay setAlpha:0.5];
+      self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:self.grayOverlay.frame];
+    }
+    
+    [self.view.superview addSubview:self.grayOverlay];
+    [self.view.superview addSubview:self.activityIndicator];
+    [self.view.superview bringSubviewToFront:self.grayOverlay];
+    [self.view.superview bringSubviewToFront:self.activityIndicator];
+    [self.activityIndicator startAnimating];
+    [self.navigationController setNavigationBarHidden:YES];
+    
+    
+    
     NSLog(@"Beginning new recording");
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     
   } downBlock:^{
     [self.motMan stopAccelerometerUpdates];
@@ -100,9 +127,15 @@ static int MAX_RECORDING_SAMPLES = (int) ((1.0 / 0.01) * 200.0);
       
       
       [self clearSamples];
+      AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
       
       NSLog(@"Added new recording");
-      NSLog(@"Now have %d recordings", [SVClassifiedRecording allObjects].count);
+      NSLog(@"Now have %d recordings", (int) [SVClassifiedRecording allObjects].count);
+      [self.grayOverlay removeFromSuperview];
+      [self.activityIndicator removeFromSuperview];
+      [self.view setUserInteractionEnabled:YES];
+      [self.activityIndicator stopAnimating];
+      [self.navigationController setNavigationBarHidden:NO];
     }
     
   }];
@@ -156,15 +189,19 @@ static int MAX_RECORDING_SAMPLES = (int) ((1.0 / 0.01) * 200.0);
   
   [self.motMan startAccelerometerUpdatesToQueue:self.operationQueue withHandler:^(CMAccelerometerData * _Nullable accelerometerData, NSError * _Nullable error) {
     CMAcceleration acceleration = accelerometerData.acceleration;
-    self.xSamples[self.sampleIndex] = acceleration.x;
-    self.ySamples[self.sampleIndex] = acceleration.y;
-    self.zSamples[self.sampleIndex] = acceleration.z;
-    
-    self.sampleIndex++;
-    if(self.sampleIndex > MAX_RECORDING_SAMPLES){
+    if(self.recordingAvailable) {
+      self.xSamples[self.sampleIndex] = acceleration.x;
+      self.ySamples[self.sampleIndex] = acceleration.y;
+      self.zSamples[self.sampleIndex] = acceleration.z;
+      
+      self.sampleIndex++;
+      if(self.sampleIndex > MAX_RECORDING_SAMPLES){
+        [self.motMan stopAccelerometerUpdates];
+        NSLog(@"Max recording length reached");
+        [self clearSamples];
+      }
+    } else {
       [self.motMan stopAccelerometerUpdates];
-      NSLog(@"Max recording length reached");
-      [self clearSamples];
     }
   }];
   
