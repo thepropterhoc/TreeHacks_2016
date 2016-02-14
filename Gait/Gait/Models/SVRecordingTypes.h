@@ -18,10 +18,7 @@
 @property double zSample;
 @end
 
-
-
 RLM_ARRAY_TYPE(SVSample);
-
 
 @interface SVClassifiedRecording : RLMObject
 @property RLMArray<SVSample> *samples;
@@ -31,9 +28,16 @@ RLM_ARRAY_TYPE(SVSample);
 @end
 
 
-
-
-
 RLM_ARRAY_TYPE(SVClassifiedRecording);
+
+@interface SVClassifiedFeature : RLMObject
+@property RLMArray<RLMDouble> *features;
+@property NSNumber<RLMInt> *featureClass;
+
+-(instancetype) initClassifiedFeatureWithBulkFeatures:(double *) features validFeatures:(NSArray<NSNumber*>*)validFeatures classLabel:(int) classLabel;
+
+@end
+
+RLM_ARRAY_TYPE(SVClassifiedFeature);
 
 #endif /* SVRecordingTypes_h */
