@@ -21,8 +21,21 @@ ___
   - Internal database for collection
   - Support Vector Machine (machine learning classification)
 
+  Over the course of the weekend, I was able to test the logging abilities of the app by taking my own phone outside, placing it in my pocket after selecting the desired sampling frequency and distance I would be walking (verified by Google Maps), and triggering its logging using my wireless headphones.  This way, I made sure I was not influencing any data collected by having abnormal movements be recorded as I placed it in my pocket. 
+  
+  
+
 ___
 ### Data
+
+*Good* 
+
+![Good walking behavior frequency spectrum](https://raw.githubusercontent.com/thepropterhoc/TreeHacks_2016/master/Collected_Data/images/good_animated.gif)
+
+*Bad*
+
+![Bad walking behavior frequency spectrum](https://raw.githubusercontent.com/thepropterhoc/TreeHacks_2016/master/Collected_Data/images/bad_animated.gif)
+
 
 
 
