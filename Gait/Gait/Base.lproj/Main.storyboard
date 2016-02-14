@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="556" y="462"/>
         </scene>
-        <!--Management View Controller-->
+        <!--Database Management View Controller-->
         <scene sceneID="pUI-vd-eGA">
             <objects>
-                <viewController id="stc-zz-8eK" customClass="SVManagementViewController" sceneMemberID="viewController">
+                <viewController id="stc-zz-8eK" customClass="SVDatabaseManagementViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xpF-YO-Bsl"/>
                         <viewControllerLayoutGuide type="bottom" id="SWQ-3O-aJD"/>
@@ -110,9 +110,6 @@
                                 <state key="normal" title="nuke database">
                                     <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="nukeDatabase:" destination="stc-zz-8eK" eventType="touchUpInside" id="LRl-3H-c5r"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAx-5v-B09">
                                 <rect key="frame" x="217" y="240" width="166" height="30"/>
@@ -125,7 +122,7 @@
                                     <color key="titleColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="exportDatabase:" destination="stc-zz-8eK" eventType="touchUpInside" id="VVF-EN-f5S"/>
+                                    <action selector="exportDatabase:" destination="stc-zz-8eK" eventType="touchUpInside" id="IWG-ar-9MR"/>
                                 </connections>
                             </button>
                         </subviews>

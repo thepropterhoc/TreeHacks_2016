@@ -10,8 +10,6 @@
 #define SVRecordingTypes_h
 
 
-#endif /* SVRecordingTypes_h */
-
 #import <Realm/Realm.h>
 
 @interface SVSample : RLMObject
@@ -20,9 +18,7 @@
 @property double zSample;
 @end
 
-@implementation SVSample
 
-@end
 
 RLM_ARRAY_TYPE(SVSample);
 
@@ -35,10 +31,9 @@ RLM_ARRAY_TYPE(SVSample);
 @end
 
 
-@implementation SVClassifiedRecording
 
-@end
 
 
 RLM_ARRAY_TYPE(SVClassifiedRecording);
 
+#endif /* SVRecordingTypes_h */

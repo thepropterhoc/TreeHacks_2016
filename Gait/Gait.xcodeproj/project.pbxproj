@@ -10,14 +10,14 @@
 		ACA76E2FC262158F5D6BA0EB /* libPods-Gait.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EBEFC86A8EDC52F613895FE /* libPods-Gait.a */; };
 		BD8D534E1C6EE020003B4EC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8D534D1C6EE020003B4EC2 /* main.m */; };
 		BD8D53511C6EE020003B4EC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8D53501C6EE020003B4EC2 /* AppDelegate.m */; };
-		BD8D53541C6EE020003B4EC2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8D53531C6EE020003B4EC2 /* ViewController.m */; };
 		BD8D53571C6EE020003B4EC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8D53551C6EE020003B4EC2 /* Main.storyboard */; };
 		BD8D53591C6EE020003B4EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD8D53581C6EE020003B4EC2 /* Assets.xcassets */; };
 		BD8D535C1C6EE020003B4EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD8D535A1C6EE020003B4EC2 /* LaunchScreen.storyboard */; };
 		BD8D53641C6EE13E003B4EC2 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8D53631C6EE13E003B4EC2 /* CoreMotion.framework */; };
-		BDE0980E1C6FB6AB0055FD95 /* SVRecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE0980D1C6FB6AB0055FD95 /* SVRecordingViewController.m */; };
 		BDE098111C6FEE5A0055FD95 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDE098101C6FEE5A0055FD95 /* AudioToolbox.framework */; };
-		BDE098171C6FF89E0055FD95 /* SVManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE098161C6FF89E0055FD95 /* SVManagementViewController.m */; };
+		BDE098181C700ADF0055FD95 /* SVRecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE0980D1C6FB6AB0055FD95 /* SVRecordingViewController.m */; };
+		BDF5F1EE1C700CD4009CDE5D /* SVDatabaseManagementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE098161C6FF89E0055FD95 /* SVDatabaseManagementViewController.m */; };
+		BDF5F1F01C700D64009CDE5D /* SVRecordingTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = BDF5F1EF1C700D64009CDE5D /* SVRecordingTypes.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +38,9 @@
 		BDE0980D1C6FB6AB0055FD95 /* SVRecordingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVRecordingViewController.m; path = Controllers/SVRecordingViewController.m; sourceTree = "<group>"; };
 		BDE0980F1C6FE9CD0055FD95 /* SVRecordingTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SVRecordingTypes.h; path = Models/SVRecordingTypes.h; sourceTree = "<group>"; };
 		BDE098101C6FEE5A0055FD95 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		BDE098151C6FF89E0055FD95 /* SVManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVManagementViewController.h; path = Controllers/SVManagementViewController.h; sourceTree = "<group>"; };
-		BDE098161C6FF89E0055FD95 /* SVManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVManagementViewController.m; path = Controllers/SVManagementViewController.m; sourceTree = "<group>"; };
+		BDE098151C6FF89E0055FD95 /* SVDatabaseManagementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SVDatabaseManagementViewController.h; path = Controllers/SVDatabaseManagementViewController.h; sourceTree = "<group>"; };
+		BDE098161C6FF89E0055FD95 /* SVDatabaseManagementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVDatabaseManagementViewController.m; path = Controllers/SVDatabaseManagementViewController.m; sourceTree = "<group>"; };
+		BDF5F1EF1C700D64009CDE5D /* SVRecordingTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SVRecordingTypes.m; path = Models/SVRecordingTypes.m; sourceTree = "<group>"; };
 		FA02357FEF502A2A1DD7F64F /* Pods-Gait.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gait.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gait/Pods-Gait.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,10 +85,11 @@
 				BD8D53521C6EE020003B4EC2 /* ViewController.h */,
 				BD8D53531C6EE020003B4EC2 /* ViewController.m */,
 				BDE0980F1C6FE9CD0055FD95 /* SVRecordingTypes.h */,
+				BDF5F1EF1C700D64009CDE5D /* SVRecordingTypes.m */,
 				BDE0980C1C6FB6AB0055FD95 /* SVRecordingViewController.h */,
 				BDE0980D1C6FB6AB0055FD95 /* SVRecordingViewController.m */,
-				BDE098151C6FF89E0055FD95 /* SVManagementViewController.h */,
-				BDE098161C6FF89E0055FD95 /* SVManagementViewController.m */,
+				BDE098151C6FF89E0055FD95 /* SVDatabaseManagementViewController.h */,
+				BDE098161C6FF89E0055FD95 /* SVDatabaseManagementViewController.m */,
 				BD8D53551C6EE020003B4EC2 /* Main.storyboard */,
 				BD8D53581C6EE020003B4EC2 /* Assets.xcassets */,
 				BD8D535A1C6EE020003B4EC2 /* LaunchScreen.storyboard */,
@@ -244,11 +246,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD8D53541C6EE020003B4EC2 /* ViewController.m in Sources */,
+				BDF5F1EE1C700CD4009CDE5D /* SVDatabaseManagementViewController.m in Sources */,
+				BDE098181C700ADF0055FD95 /* SVRecordingViewController.m in Sources */,
+				BDF5F1F01C700D64009CDE5D /* SVRecordingTypes.m in Sources */,
 				BD8D53511C6EE020003B4EC2 /* AppDelegate.m in Sources */,
-				BDE098171C6FF89E0055FD95 /* SVManagementViewController.m in Sources */,
 				BD8D534E1C6EE020003B4EC2 /* main.m in Sources */,
-				BDE0980E1C6FB6AB0055FD95 /* SVRecordingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,15 +6,15 @@
 //  Copyright © 2016 Shelby Vanhooser. All rights reserved.
 //
 
-#import "SVManagementViewController.h"
+#import "SVDatabaseManagementViewController.h"
 
-@interface SVManagementViewController ()
+@interface SVDatabaseManagementViewController ()
 
 @property (strong, nonatomic) RLMRealm *defaultRealm;
 
 @end
 
-@implementation SVManagementViewController
+@implementation SVDatabaseManagementViewController
 
 -(void) viewDidLoad
 {
@@ -29,9 +29,10 @@
 
 -(IBAction) exportDatabase:(id)sender
 {
+  
   NSString *defaultPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
   for (SVClassifiedRecording *recording in [SVClassifiedRecording allObjects]){
-    NSString *savePath = [defaultPath stringByAppendingString:[NSString stringWithFormat:@"%@.plist", [NSUUID UUID].UUIDString]];
+    NSString *savePath = [defaultPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.plist", [NSUUID UUID].UUIDString]];
     
     NSDictionary *saveDictionary = @{@"class" : recording.sampleClassification,
                                      @"interval" : recording.samplingInterval,
@@ -39,27 +40,32 @@
                                      @"xSamples" : [self xSamplesFromRLMArray:recording.samples],
                                      @"ySamples" : [self ySamplesFromRLMArray:recording.samples],
                                      @"zSamples" : [self zSamplesFromRLMArray:recording.samples]};
-    [saveDictionary writeToFile:savePath atomically:NO];
+    [saveDictionary writeToFile:savePath atomically:YES];
+    NSLog(@"Wrote dictionary to path : %@", savePath);
   }
   NSLog(@"Saved database");
+   
 }
 
 
 -(NSArray *) xSamplesFromRLMArray:(RLMArray<SVSample> *)ary
 {
+  
   NSMutableArray *retval = [[NSMutableArray alloc] initWithCapacity:ary.count];
-  int at = 0;
-  for(SVSample* s in ary){
+  for(int at = 0; at < ary.count; at ++){
+    SVSample *s = ary[at];
     retval[at] = [NSNumber numberWithDouble:s.xSample];
   }
   return (NSArray *) retval;
+   
 }
 
 -(NSArray *) ySamplesFromRLMArray:(RLMArray<SVSample> *) ary
 {
+  
   NSMutableArray *retval = [[NSMutableArray alloc] initWithCapacity:ary.count];
-  int at = 0;
-  for(SVSample* s in ary){
+  for(int at = 0; at < ary.count; at ++){
+    SVSample *s = ary[at];
     retval[at] = [NSNumber numberWithDouble:s.ySample];
   }
   return (NSArray *) retval;
@@ -68,8 +74,8 @@
 -(NSArray *) zSamplesFromRLMArray:(RLMArray<SVSample> *) ary
 {
   NSMutableArray *retval = [[NSMutableArray alloc] initWithCapacity:ary.count];
-  int at = 0;
-  for(SVSample* s in ary){
+  for(int at = 0; at < ary.count; at ++){
+    SVSample *s = ary[at];
     retval[at] = [NSNumber numberWithDouble:s.zSample];
   }
   return (NSArray *) retval;
@@ -84,5 +90,6 @@
   [self.defaultRealm commitWriteTransaction];
   
 }
+ 
 
 @end
